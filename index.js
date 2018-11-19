@@ -6,7 +6,6 @@ let	mongoose				= require('mongoose');
 let	path					  = require('path'),
     bodyParser			= require('body-parser');
 
-
 let fs              = require('fs');
 
 let	app					    = express();
