@@ -67,9 +67,6 @@ app.use('/cdn', express.static(__dirname + '/cdn/') );
 
 
 
-app.get('/', function (req, res,next) {
- res.redirect('/'); 
-});
 
 
 const PORT = process.env.PORT || aport;
