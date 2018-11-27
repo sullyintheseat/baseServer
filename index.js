@@ -25,8 +25,17 @@ mongoose.connect(dbPath, { useNewUrlParser: true } );
 db.on('error', console.error);
 db.once('connected', function() { console.log(`${dbPath}`);});
 
-db.once('open', function() {
-	
+db.once('open', () => {
+  fs.readdirSync('./controllers').forEach(function(file) {
+    if (file.substr(-3) === '.js' && file.substr(-7) !== 'spec.js') {
+      require('./controllers/' + file).controller(app);
+    }
+  });
+  fs.readdirSync('./models').forEach(function(file) {
+    if (file.substr(-3) === '.js' && file.substr(-7) !== 'spec.js') {
+      require('./models/' + file);
+    }
+  });
 });
 
 var xPolicy			    = function (req, res, next){
@@ -34,7 +43,7 @@ var xPolicy			    = function (req, res, next){
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
 	res.header("Access-Control-Allow-Credentials", "true");
 	//res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, access_token, X-CSRF-TOKEN");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, token, X-CSRF-TOKEN");
   	next();
 };
 app.use(xPolicy);
