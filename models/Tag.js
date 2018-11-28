@@ -3,9 +3,23 @@ const Schema = mongoose.Schema;
 const shortId = require('shortid');
 
 const TagSchema = Schema({
-  tag: {type: String, default: shortId.generate },
-  name: {type: String, default: null, unique: true},
-  created: {type:Date, default: Date.now()}
+  tagShort: {
+    type: String,
+    default: shortId.generate ,
+    index: true,
+    required: true,
+    unique: true
+  },
+  ownerShort: {
+    type: String,
+    default: null,
+    unique: true,
+    index: true
+  },
+  created: {
+    type:Date,
+    default: Date.now()
+  }
 }, {collection: 'newTags'});
 
 class Tag {
