@@ -12,7 +12,7 @@ const TagManagerController = {
   },
 
   findTag: async(req, res) => {
-    let target = req.params.id;
+    let target = req.params.short;
     try{
       let result;
       (target != undefined) ? result = await Tag.getItem(req.params.id) : result = await Tag.getItems();
@@ -43,7 +43,7 @@ module.exports.Controller = TagManagerController;
 module.exports.controller = app => {
 
   app.post('/v1/tag', TagManagerController.addTag);
-  app.get('/v1/tag/:id', TagManagerController.findTag);
+  app.get('/v1/tag/:short', TagManagerController.findTag);
   app.get('/v1/tag', TagManagerController.findTag);
 
   app.put('/v1/tag/:short', TagManagerController.modifyTag);

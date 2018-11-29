@@ -70,12 +70,16 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/', express.static(__dirname + '/wwwroot/') );
+var options = {
+  index: 'index.htm'
+};
+
+app.use(express.static('app', options));
+
+app.use('/', express.static(__dirname + '/wwwroot/', options) );
+app.use('/admin', express.static(__dirname + '/admin/', options) );
 
 app.use('/cdn', express.static(__dirname + '/cdn/') );
-
-
-
 
 
 const PORT = process.env.PORT || aport;

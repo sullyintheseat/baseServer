@@ -5,22 +5,22 @@ const shortId = require('shortid');
 const TagSchema = Schema({
   tagShort: {
     type: String,
-    default: shortId.generate ,
+    default: shortId.generate,
     index: true,
     required: true,
     unique: true
   },
-  ownerShort: {
+  repShort: {
     type: String,
     default: null,
-    unique: true,
-    index: true
-  },
-  created: {
-    type:Date,
-    default: Date.now()
   }
-}, {collection: 'newTags'});
+},
+{
+  timestamps: true,
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
+  id: false
+});
 
 class Tag {
   
@@ -34,7 +34,7 @@ class Tag {
 
   static async getItem(id) {
     try {
-      return await this.findOne({_id : id})
+      return await this.findOne({tagShort : id})
       .exec();
     } catch (err) {
       throw err;
@@ -60,4 +60,4 @@ class Tag {
 }
 
 TagSchema.loadClass(Tag);
-module.exports = mongoose.model('tag', TagSchema);
+module.exports = mongoose.model('Tag', TagSchema, 'tags');
