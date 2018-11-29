@@ -40,7 +40,7 @@ const RepSchema = Schema({
 
 RepSchema.virtual('tags',{
   localField: 'repShort',
-  foreignField: 'ownerShort',
+  foreignField: 'repShort',
   ref: 'Tag'
 })
 class Representative {
@@ -56,10 +56,9 @@ class Representative {
 
   static async getItem(id) {
     try {
-      let rep = await this.findOne({tagShort : id})
+      let rep = await this.findOne({repShort : id})
       .populate({path : 'tags', model: 'Tag', select: '-_id -createdAt -updatedAt -__v'})
       .exec();
-
       return rep;
     } catch (err) {
       throw err;

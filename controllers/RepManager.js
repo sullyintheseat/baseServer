@@ -15,7 +15,7 @@ const RepManagerController = {
     let target = req.params.short;
     try{
       let result;
-      (target != undefined) ? result = await Rep.getItem(req.params.id) : result = await Rep.getItems();
+      (target != undefined) ? result = await Rep.getItem(target) : result = await Rep.getItems();
       res.send(result);
     } catch (err) {
       res.status(500).send('Unknown database error');

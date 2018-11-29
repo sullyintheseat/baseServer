@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>\</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="/cdn/js/libs/jquery-2.2.3.min.js"></script>
+    <title>I'm a web page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-      <div style="width:100%;">
-        <p>Your location:</p>
-        <p>Latitutde: <span id="lat"></span></p>
-        <p>Longitude: <span id="long"></span></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">test</div>
       </div>
+    </div>
   </body>
   <script>
     
@@ -20,35 +21,8 @@
         init();
     });
 
-
-    showPosition = (position) => {
-      $("#lat").text(position.coords.latitude);
-      $("#long").text(position.coords.longitude);
-      
-    }
-
-    showError = (error) => {
-      switch (error.code) {
-          case error.PERMISSION_DENIED:
-              x.innerHTML = "User denied the request for Geolocation.";
-              break;
-          case error.POSITION_UNAVAILABLE:
-              x.innerHTML = "Location information is unavailable.";
-              break;
-          case error.TIMEOUT:
-              x.innerHTML = "The request to get user location timed out.";
-              break;
-          case error.UNKNOWN_ERR:
-              x.innerHTML = "An unknown error occurred.";
-              break;
-      }
-    }
     init = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition)
-      } else {
-        alert("Geolocation API doesn't supported.")
-      }
+      
     }
     
     </script>
