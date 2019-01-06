@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 
 
 var options = {
-  index: 'index.htm'
+  index: 'index.html'
 };
 
 app.use(express.static('app', options));
