@@ -274,13 +274,25 @@
         </div>
       </div>
       
+      <div class="displayOff" id="offer">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+            <h4>Digital Seat Offer</h4>
+            
+            <p onclick="leaveOffer()">Back to main</p>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </div>
 
   </body>
   <script type="text/javascript">
     $(document).ready(function(e) { init(); });
 
-    const panels = ["menu", 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat'];
+    const panels = ["menu", 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
+    let returnPath;
 
     init = () => {
 
@@ -301,9 +313,15 @@
     }
 
     launchOffer = (target) => {
-      console.log(target);
+      showPanel('offer');
+      let str = target.split('_');
+      let returnPath = str[0];
+      
     }
 
+    leaveOffer = () => {
+      showPanel(returnPath);
+    }
   </script>
 
 </html>
