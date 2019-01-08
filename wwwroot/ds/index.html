@@ -90,7 +90,24 @@
             </button>
             <a class="navbar-brand" href="#">Digital Seat</a>
           </div>
-          </div><!-- /.navbar-collapse -->
+          
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" onclick="goto('contest')">Contest</a></li>
+                  <li><a href="#" onclick="goto('dallas')">Dallas</a></li>
+                  <li><a href="#" onclick="goto('ftworth')">Fort Worth</a></li>
+                  <li><a href="#" onclick="goto('arlington')">Arlington</a></li>
+                  <li><a href="#" onclick="goto('digitalseat')">Digital Seat</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
         </div><!-- /.container-fluid -->
       </nav>
 
