@@ -94,15 +94,16 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-      <div class="container" style="margin-top:8px;">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('contest')">
-            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+      <div class="displayOn" id="menu">
+      
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('contest')">
+              <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
           </div>
         </div>
-      </div>
       
-      <div class="menu displayOn">
         <div class="container" style="margin-top:16px;">
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('dallas')">
@@ -130,7 +131,7 @@
         <div class="container" style="margin-top:8px;">
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1 centered" style="border-bottom: solid 1px #c0c0c0; text-align: center;" onclick="goto('digitalseat')">
-              <img src="http://signup.digitalseat.io/imgs/dslogo.jpg" alt="Digital Seat" style="width:75%; max-width:480px; padding-bottom:32px; margin-bottom: 16px;"/>
+              <img src="https://signup.digitalseat.io/imgs/dslogo.jpg" alt="Digital Seat" style="width:75%; max-width:480px; padding-bottom:32px; margin-bottom: 16px;"/>
             </div>
           </div>
         </div>
@@ -143,7 +144,87 @@
             </div>
           </div>
         </div>
+
+      </div>
+
+      <div class="displayOff" id="contest">
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <p>Signup for contest data here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="displayOff" id="dallas">
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <img src="/imgs/dallas.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <p>Dallas information</p>
+            </div>
+          </div>
+        </div>
+      </div>
       
+      <div class="displayOff" id="ftworth">
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <p>Fort Worth information</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="displayOff" id="arlington">
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <img src="/imgs/arlington.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <p>Arlington information</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="displayOff" id="digitalseat">
+        <div class="container" style="margin-top:8px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <img src="https://signup.digitalseat.io/imgs/dslogo.jpg" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+              <p>Digital Seat information</p>
+            </div>
+          </div>
+        </div>
       </div>
       
     </div>
@@ -159,7 +240,7 @@
     }
 
     goto = (target) => {
-      alert(target);
+      showPanel(target);
     }
 
   </script>
