@@ -205,8 +205,8 @@
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
               <h4>While in Dallas</h4>
-              <img src="/imgs/topgolf.png" class="valuelink" />
-              <img src="/imgs/houseofblues.png" class="valuelink" />
+              <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('dallas_topgolf')"/>
+              <img src="/imgs/houseofblues.png" class="valuelink" onclick="launchOffer('dallas_houseofblues')" />
               <p onclick="goto('menu')">Back to main</p>
             </div>
           </div>
@@ -224,8 +224,8 @@
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
               <h4>While in Fort Worth</h4>
-              <img src="/imgs/topgolf.png" class="valuelink" />
-              <img src="/imgs/texaslive.png" class="valuelink" />
+              <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('ftworth_topgolf')"/>
+              <img src="/imgs/texaslive.png" class="valuelink" onclick="launchOffer('ftworth_texaslive')" />
               <p onclick="goto('menu')">Back to main</p>
             </div>
           </div>
@@ -243,8 +243,8 @@
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
               <h4>While in Arlington</h4>
-              <img src="/imgs/topgolf.png" class="valuelink" />
-              <img src="/imgs/stockyards.png" class="valuelink" />
+              <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('arlington_topgolf')" />
+              <img src="/imgs/stockyards.png" class="valuelink" onclick="launchOffer('arlington_stockyards')" />
               <p onclick="goto('menu')">Back to main</p>
             </div>
           </div>
@@ -292,6 +292,10 @@
       $('#contestFormThanks').removeClass('displayOff');
       $('#contestFormThanks').addClass('displayOn');
 
+    }
+
+    launchOffer = (target) => {
+      console.log(target);
     }
 
   </script>
