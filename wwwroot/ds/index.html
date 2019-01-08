@@ -291,8 +291,8 @@
   <script type="text/javascript">
     $(document).ready(function(e) { init(); });
 
-    const panels = ["menu", 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
-    let returnPath;
+    const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
+    let returnPath = '';
 
     init = () => {
 
@@ -315,8 +315,7 @@
     launchOffer = (target) => {
       showPanel('offer');
       let str = target.split('_');
-      let returnPath = str[0];
-      
+      returnPath = str[0].toString();
     }
 
     leaveOffer = () => {
