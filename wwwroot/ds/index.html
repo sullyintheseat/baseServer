@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://signup.digitalseat.io/cdn/js/libs//handlebars-v1.3.0.js"></script>
     <script src="https://signup.digitalseat.io/cdn/js/webcalls.js"></script>
+    <script src="https://signup.digitalseat.io/cdn/js/libs/moment.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://signup.digitalseat.io/cdn/style/custom.css">
     <style>
@@ -78,20 +79,22 @@
   </head>
   <body>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="text-align: left;" onclick="goto('contest')"><br/>
+          <p id="todaysdate"></p>
+          <h3>Today</h3>
+        </div>
+      </div>
+    </div>
+
+
     <div class="displayOn" id="menu">
       
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('contest')"><br/>
-            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('contest')"><br/>
-            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
       </div>
@@ -99,8 +102,8 @@
       <div class="container" style="margin-top:16px;">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('dallas')">
-            <img src="/imgs/dallas.png" alt="Digital Seat" style="width:75%; max-width:480px;"/><br/>
-            <img src="/imgs/dallas_footer.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/dallas.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br/>
+            <img src="/imgs/dallas_footer.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
       </div>
@@ -108,8 +111,8 @@
       <div class="container" style="margin-top:16px;">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('ftworth')">
-            <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:75%; max-width:480px;"/><br />
-            <img src="/imgs/ftworth_footer.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br />
+            <img src="/imgs/ftworth_footer.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
       </div>
@@ -117,8 +120,8 @@
       <div class="container" style="margin-top:16px;">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('arlington')">
-            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:75%; max-width:480px;"/><br />
-            <img src="/imgs/arlington_footer.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br />
+            <img src="/imgs/arlington_footer.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
       </div>
@@ -126,7 +129,7 @@
       <div class="container" style="margin-top:8px;">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="border-bottom: solid 1px #c0c0c0; text-align: center;" onclick="goto('digitalseat')">
-            <img src="/imgs/dseat_tile.png" alt="Digital Seat" style="width:75%; max-width:480px; padding-bottom:32px; margin-bottom: 16px;"/>
+            <img src="/imgs/dseat_tile.png" alt="Digital Seat" style="width:100%; max-width:480px; padding-bottom:32px; margin-bottom: 16px;"/>
           </div>
         </div>
       </div>
@@ -144,11 +147,11 @@
 
     <div class="displayOff" id="contest">
         
-      <div class="container" style="margin-top:8px;" id="contestForm">
+      <div class="container" id="contestForm">
           
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/Timberlake.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
 
@@ -181,10 +184,10 @@
     </div>
 
     <div class="displayOff" id="dallas">
-      <div class="container" style="margin-top:8px;">
+      <div class="container">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/dallas.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/dallas.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
 
@@ -201,10 +204,10 @@
     </div>
       
     <div class="displayOff" id="ftworth">
-      <div class="container" style="margin-top:8px;">
+      <div class="container" >
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
 
@@ -221,11 +224,11 @@
     </div>
 
     <div class="displayOff" id="arlington">
-      <div class="container" style="margin-top:8px;">
+      <div class="container">
         
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
 
@@ -243,10 +246,10 @@
     </div>
 
     <div class="displayOff" id="digitalseat">
-      <div class="container" style="margin-top:8px;">
+      <div class="container">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="https://signup.digitalseat.io/imgs/dslogo.jpg" alt="Digital Seat" style="width:75%; max-width:480px; margin-bottom: 16px;"/>
+            <img src="https://signup.digitalseat.io/imgs/dslogo.jpg" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
           </div>
         </div>
 
@@ -279,9 +282,11 @@
 
     const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
     let returnPath = '';
+    let mydate;
 
     init = () => {
-
+      mydate = moment().format('dddd, MMMM Do');
+      $('#todaysdate').html(mydate);
     }
 
     goto = (target) => {
