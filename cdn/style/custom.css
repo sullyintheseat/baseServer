@@ -3,11 +3,82 @@
   width:100%; 
   padding:0px; 
   margin:0px; 
-  background-color: #fff;  
-  color:#393939; 
+  background-color: #fff; 
   font-weight: 300; 
-  font-size:18px 100%;}
+  font-size:18px 100%;
+  color:#000;}
 h2 { font-weight:400; text-transform:uppercase;}
 h1 { font-weight:400;text-transform:uppercase;}
-h3 {font-weight:400; color:#000; margin:0px 0px 8px 0px; padding:0px; text-transform:uppercase;}
-p {text-transform:uppercase;}
+h3 {font-weight:400; color:#000; margin:2px 0px 4px 0px; padding:0px; text-transform:uppercase; color:#ff8100;}
+p {text-transform:uppercase; color:#000;}
+
+#todaysdate { color: #000; font-size: 20px;}
+
+input {
+  text-align: center;
+  width:100%;
+  padding: 0.25em;      
+  border-top: none;
+  min-height: 2em;
+  border-left: none;
+  border-right: none;
+  margin-top:4px;
+  max-width: 480px;
+}
+input:focus{ 
+  outline: none;
+  border-bottom: 1px solid rgb(230, 145, 56);
+}
+
+#registration {
+  margin-top: 32px;
+  color: #393939;
+  text-align: left;
+}
+
+#signupSuccess {
+  margin-top: 32px;
+  color: #393939;
+  text-align: center;
+}
+
+.orangeBlock {
+  background-color:#ff8100;
+  color: #fff;
+  width: 100%;
+  height: 240px;
+}
+.radio-inline label{ color:#939393; font-weight:300; }
+
+.btn-orange { background-color:  rgb(230, 105, 56); 
+  border-color: #9a9a9a; 
+  color:#fff; 
+  display: inline-block;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-custom { 
+  border-color: #9a9a9a; 
+  color:#9a9a9a; 
+  display: inline-block;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.valuelink { width:100%; margin:8px 0px;}
+
+.displayOn { display:block; visibility:visible; }
+.displayOff { display:none; visibility:hidden; }
+
+.centered { width:100%; text-align: center; }
