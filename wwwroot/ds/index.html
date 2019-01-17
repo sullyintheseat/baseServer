@@ -5,7 +5,8 @@
  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -62,9 +63,9 @@
 
       <div class="container" style="margin-top:16px;">
         <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('arlington')">
+          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <img src="/imgs/topcap.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br />
-            <div class="orangeBlock">
+            <div class="orangeBlock centered">
               <h3 style="color:#fff; margin-top:0px;">Value on the Go!</h3>
               
             </div>
@@ -118,7 +119,7 @@
             <p><input type="text" placeholder="Your Name" /></p>
             <p><input type="text" placeholder="Email Address" /></p>
             <p><input type="text" placeholder="Mobile Number" /></p>
-            <br/><br/>
+            <br/>
             <button class="btn btn-sm btn-primary btn-orange" onclick="submitForm();">SUBMIT</button>
             <br/><br/>
             <p onclick="goto('menu')">Back to main</p>
@@ -151,7 +152,7 @@
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <h4>While in Dallas</h4>
             <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('dallas_topgolf')"/>
-            <img src="/imgs/houseofblues.png" class="valuelink" onclick="launchOffer('dallas_houseofblues')" />
+            <img src="/imgs/ifly.png" class="valuelink" onclick="launchOffer('dallas_ifly')" />
             <p><br /></p>
             <p onclick="goto('menu')">Back to main</p>
           </div>
@@ -192,7 +193,7 @@
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <h4>While in Arlington</h4>
             <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('arlington_topgolf')" />
-            <img src="/imgs/stockyards.png" class="valuelink" onclick="launchOffer('arlington_stockyards')" />
+            <img src="/imgs/ChappsBurgers.png" class="valuelink" onclick="launchOffer('arlington_chappsburgers')" />
             <p><br /></p>
             <p onclick="goto('menu')">Back to main</p>
           </div>
@@ -224,7 +225,7 @@
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
           <h4>Digital Seat Offer</h4>
-          
+          <a id="offerlink" target="_blank"><img src="" style="width:100%;" id="offerimage"/></a>
           <p onclick="leaveOffer()">Back to main</p>
         </div>
       </div>
@@ -237,6 +238,10 @@
     $(document).ready(function(e) { init(); });
 
     const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
+    let offers = [
+      { name: 'chappsburgers', image: '/imgs/ChappsBurgers.png', link:'https://mp.vibescm.com/c/grz6lg' },
+      { name: 'ifly', image: '/imgs/ifly.png', link:'https://mp.vibescm.com/c/6sp94j' }
+    ]
     let returnPath = '';
     let mydate;
 
@@ -262,6 +267,14 @@
     launchOffer = (target) => {
       showPanel('offer');
       let str = target.split('_');
+      let offer;
+      for(let i = 0; i < offers.length; i++) {
+        if(offers[i].name == str[1]) {
+          offer = offers[i];
+        }
+      }
+      $("#offerimage").attr('src',offer.image);
+      $("#offerlink").attr('href',offer.link);
       returnPath = str[0].toString();
     }
 
