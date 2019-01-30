@@ -143,15 +143,16 @@
 
     <div class="displayOff" id="dallas" style="margin-top:20px;">
       <div class="container">
+
         <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/dallas.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
+          <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
+              <h4>While in Fort Worth</h4>  
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>While in Dallas</h4>
+            <img src="/imgs/dallas.png" alt="Digital Seat" class="valuelink" />
             <img src="/imgs/ifly.png" class="valuelink" onclick="launchOffer('dallas_ifly')" /><br/><br/>
             <img src="/imgs/topgolf.png" class="valuelink"/>            
             <p><br /></p>
@@ -163,15 +164,16 @@
       
     <div class="displayOff" id="ftworth" style="margin-top:20px;">
       <div class="container" >
+
         <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/ftworth.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
+          <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
+              <h4>While in Fort Worth</h4>  
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>While in Fort Worth</h4>
+            <img src="/imgs/ftworth.png" alt="Digital Seat" class="valuelink" /><br/><br/>
             <img src="/imgs/texaslive.png" class="valuelink" /><br/><br/>
             <img src="/imgs/topgolf.png" class="valuelink" />
             <p><br /></p>
@@ -185,14 +187,14 @@
       <div class="container">
         
         <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
+          <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
+              <h4>While in Arlington</h4>  
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>While in Arlington</h4>
+            <img src="/imgs/arlington.png" alt="Digital Seat" class="valuelink" onclick="getEvents('arlington')"/><br/><br/>
             <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('arlington_topgolf')" /><br/><br/>
             <img src="/imgs/ChappsBurgers.png" class="valuelink" onclick="launchOffer('arlington_chappsburgers')" />
             <p><br /></p>
@@ -232,13 +234,27 @@
       </div>
     </div>
 
+    <div class="displayOff" id="events" >
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+            <p>Check out these upcoming Texas Live! events!</p>
+            <img src="/imgs/mayhem.png" alt="Digital Seat" class="valuelink"/><br/><br/>
+            <img src="/imgs/septmoon.png" class="valuelink"/><br/><br/>
+            <img src="/imgs/cherrybomb.png" class="valuelink"/>
+            <p onclick="leaveOffer()">Arlington Main</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
 
   </body>
   <script type="text/javascript">
     $(document).ready(function(e) { init(); });
 
-    const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer'];
+    const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer', 'events'];
     let offers = [
       { name: 'chappsburgers', image: '/imgs/ChappsBurgers.png', link:'https://mp.vibescm.com/c/grz6lg' },
       { name: 'ifly', image: '/imgs/ifly.png', link:'https://mp.vibescm.com/c/6sp94j' }
@@ -277,6 +293,12 @@
       $("#offerimage").attr('src',offer.image);
       $("#offerlink").attr('href',offer.link);
       returnPath = str[0].toString();
+    }
+
+    getEvents = (target) => {
+      showPanel('events');
+     
+      returnPath = target;
     }
 
     leaveOffer = () => {
