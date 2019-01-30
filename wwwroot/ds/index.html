@@ -42,6 +42,15 @@
           </div>
         </div>
       </div>
+
+      <div class="container" style="margin-top:16px;">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('arlington')">
+              <img src="/imgs/arlington.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br />
+              <img src="/imgs/arlington_footer.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
+            </div>
+          </div>
+        </div>
     
       <div class="container" style="margin-top:16px;">
         <div class="row">
@@ -75,14 +84,6 @@
         </div>
       </div>
       -->
-      <div class="container" style="margin-top:16px;">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('arlington')">
-            <img src="/imgs/arlington.png" alt="Digital Seat" style="width:100%; max-width:480px;"/><br />
-            <img src="/imgs/arlington_footer.png" alt="Digital Seat" style="width:100%; max-width:480px; margin-bottom: 16px;"/>
-          </div>
-        </div>
-      </div>
 
       <div class="container" style="margin-top:16px;">
         <div class="row">
@@ -146,15 +147,14 @@
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
-              <h4>While in Fort Worth</h4>  
+              <h4>While in Dallas</h4>  
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <img src="/imgs/dallas.png" alt="Digital Seat" class="valuelink" />
-            <img src="/imgs/ifly.png" class="valuelink" onclick="launchOffer('dallas_ifly')" /><br/><br/>
-            <img src="/imgs/topgolf.png" class="valuelink"/>            
+            <img src="/imgs/ifly.png" class="valuelink" onclick="launchOffer('dallas_ifly')" /><br/><br/>        
             <p><br /></p>
             <p onclick="goto('menu')">Back to main</p>
           </div>
@@ -195,7 +195,10 @@
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <img src="/imgs/arlington.png" alt="Digital Seat" class="valuelink" onclick="getEvents('arlington')"/><br/><br/>
-            <img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('arlington_topgolf')" /><br/><br/>
+            <!--img src="/imgs/topgolf.png" class="valuelink" onclick="launchOffer('arlington_topgolf')" /><br/><br/ -->
+            <img src="/imgs/att.png" class="valuelink" onclick="launchOffer('arlington_att')" /><br/><br/>
+            <img src="/imgs/pudges.png" class="valuelink" onclick="launchOffer('arlington_pudges')" /><br/><br/>
+            <img src="/imgs/sixflags.png" class="valuelink" onclick="launchOffer('arlington_sixflags')" /><br/><br/>
             <img src="/imgs/ChappsBurgers.png" class="valuelink" onclick="launchOffer('arlington_chappsburgers')" />
             <p><br /></p>
             <p onclick="goto('menu')">Back to main</p>
@@ -225,11 +228,14 @@
     </div>
       
     <div class="displayOff" id="offer" >
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-          <h4>Digital Seat Offer</h4>
-          <a id="offerlink" target="_blank"><img src="" style="width:100%;" id="offerimage"/></a>
-          <p onclick="leaveOffer()">Back to main</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
+            <h4>Digital Seat Offer</h4>
+            <a id="offerlink" target="_blank"><img src="" style="width:100%;" id="offerimage"/><br/>
+            <h4 style="margin-top:16px;" id="offetText">Click here for a special offer</h4></a><br/>
+            <h4 onclick="leaveOffer()">Return</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -239,9 +245,18 @@
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
             <p>Check out these upcoming Texas Live! events!</p>
-            <img src="/imgs/mayhem.png" alt="Digital Seat" class="valuelink"/><br/><br/>
-            <img src="/imgs/septmoon.png" class="valuelink"/><br/><br/>
+            <img src="/imgs/mayhem.png" alt="Digital Seat" class="valuelink"/>
+            <br/>
+            <h4>Monthly Mayhem</h4>
+            <br/><br/>
+            <img src="/imgs/septmoon.png" class="valuelink"/>
+            <br/>
+            <h4>September Moon</h4>
+            <br/><br/>
             <img src="/imgs/cherrybomb.png" class="valuelink"/>
+            <br/>
+            <h4>Cherry Bomb</h4>
+            <br/><br/>
             <p onclick="leaveOffer()">Arlington Main</p>
           </div>
         </div>
@@ -257,7 +272,10 @@
     const panels = ['menu', 'contest', 'dallas', 'ftworth', 'arlington', 'digitalseat', 'offer', 'events'];
     let offers = [
       { name: 'chappsburgers', image: '/imgs/ChappsBurgers.png', link:'https://mp.vibescm.com/c/grz6lg' },
-      { name: 'ifly', image: '/imgs/ifly.png', link:'https://mp.vibescm.com/c/6sp94j' }
+      { name: 'ifly', image: '/imgs/ifly.png', link:'https://mp.vibescm.com/c/6sp94j' },
+      { name: 'pudges', image: '/imgs/pudges.png', link:'https://mp.vibescm.com/c/zkavvy' },
+      { name: 'att', image: '/imgs/att.png', link:'https://tours.attstadium.com/shows/vip%20guided%20tour/events/2' },
+      { name: 'sixflags', image: '/imgs/sixflags.png', link:'https://www.sixflags.com/overtexas/special-offers' }
     ]
     let returnPath = '';
     let mydate;
