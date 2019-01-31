@@ -18,8 +18,8 @@
   </head>
   <body>
 
+    <div><a name="menu_top"></a></div>
     <div class="container">
-        <a name="menu_top"></a>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1" style="text-align: left;"><br/>
           <span id="todaysdate"></span><br/>
@@ -190,7 +190,6 @@
     </div>
 
     <div class="displayOff" id="arlington" style="margin-top:20px;">
-      <a name="arlington_top"></a>
       <div class="container">
         
         <div class="row">
@@ -310,11 +309,12 @@
     init = () => {
       mydate = moment().format('dddd, MMMM Do');
       $('#todaysdate').html(mydate);
+      scrollToAnchor('menu_top');
     }
 
     goto = (target) => {
       showPanel(target);
-      window.location.hash = `#${target}_top`;
+      scrollToAnchor('menu_top');
     }
 
     submitForm = () => {
@@ -340,18 +340,25 @@
       $("#offerimage").attr('src',offer.image);
       $("#offerlink").attr('href',offer.link);
       returnPath = str[0].toString();
+      scrollToAnchor('menu_top');
     }
 
     getEvents = (target) => {
       showPanel('events');
      
       returnPath = target;
+      scrollToAnchor('menu_top');
     }
 
     leaveOffer = () => {
       showPanel(returnPath);
-      window.location.hash = `#${returnPath}_top`;
+      scrollToAnchor('menu_top');
     }
+
+    scrollToAnchor = (aid) =>{
+    let aTag = $("a[name='"+ aid +"']");
+      $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    } 
   </script>
 
 </html>
