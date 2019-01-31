@@ -88,3 +88,4 @@ input:focus{
 
 #events img  {width:100%; }
 #offer img  {width:100%; }
+#offer a:hover { text-decoration: none;}

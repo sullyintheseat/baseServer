@@ -116,8 +116,8 @@
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>Enter for your chance to win!</h4>
-            <p>Please fill out the following information:</p>
+            <h4 style="text-align: left;">Enter for your chance to win!</h4>
+            <p style="text-align: left;">Please fill out the following information:</p>
             <p><input type="text" placeholder="Your Name" /></p>
             <p><input type="text" placeholder="Email Address" /></p>
             <p><input type="text" placeholder="Mobile Number" /></p>
@@ -149,7 +149,7 @@
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
-              <h4>While in Dallas</h4>  
+              <h4 style="text-align: left;">While in Dallas</h4>  
           </div>
         </div>
 
@@ -170,7 +170,7 @@
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
-              <h4>While in Fort Worth</h4>  
+              <h4 style="text-align: left;">While in Fort Worth</h4>  
           </div>
         </div>
 
@@ -192,7 +192,7 @@
         
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1" style="text-align: left;">
-              <h4>While in Arlington</h4>  
+              <h4 style="text-align: left;">While in Arlington</h4>  
           </div>
         </div>
 
@@ -223,7 +223,7 @@
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>Digital Seat information</h4>
+            <h4 style="text-align: left;">Digital Seat information</h4>
             <p>For more information on the Digital Seat network, please visit us at <a href="https://www.digitalseat.com/?ref=driverId" target="_blank">www.digitalseat.com</a></p>
             <p><br /></p>
             <p onclick="goto('menu')">Back to main</p>
@@ -237,9 +237,10 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;">
-            <h4>Digital Seat Offer</h4>
+            <h4  style="text-align: left; margin-bottom:8px;">Digital Seat Offer</h4>
             <a id="offerlink" target="_blank"><img src="" style="width:100%;" id="offerimage"/><br/>
-            <h4 style="margin-top:16px;" id="offetText">Click here for a special offer</h4></a><br/>
+            <span id ="offerText"></span>
+            <h4 style="margin-top:16px;">Click here for a special offer</h4></a><br/>
             <h4 onclick="leaveOffer()">Return</h4>
             <br /><br />
           </div>
@@ -282,8 +283,18 @@
       { name: 'chappsburgers', image: '/imgs/ChappsBurgers.png', link:'https://mp.vibescm.com/c/grz6lg' },
       { name: 'ifly', image: '/imgs/ifly.png', link:'https://mp.vibescm.com/c/6sp94j' },
       { name: 'pudges', image: '/imgs/pudges.png', link:'https://mp.vibescm.com/c/zkavvy' },
-      { name: 'att', image: '/imgs/att.png', link:'https://tours.attstadium.com/shows/vip%20guided%20tour/events/2' },
-      { name: 'sixflags', image: '/imgs/sixflags.png', link:'https://www.sixflags.com/overtexas/special-offers' }
+      { 
+        name: 'att', 
+        image: '/imgs/att.png', 
+        link:'https://tours.attstadium.com/shows/vip%20guided%20tour/events/2',
+        content: 'VIP Guided Tour presented by SeatGeek With small group sizes and additional tour stops, the VIP Guided Tour is the ultimate AT&T Stadium tour experience. Our knowledgeable tour guides will ensure you leave AT&T Stadium with a wealth of facts & figures.'
+      },
+      { 
+        name: 'sixflags', 
+        image: '/imgs/sixflags.png', 
+        link:'https://www.sixflags.com/overtexas/special-offers',
+        content: 'Six Flags is proud to bring you these special deals along with offers from our partners. And don\'t forget to sign up to receive email updates about news, events and discounts from Six Flags Over Texas'
+      }
     ]
     let returnPath = '';
     let mydate;
@@ -316,6 +327,7 @@
           offer = offers[i];
         }
       }
+      $('#offerText').html(`<p style="text-align:left; text-decoration:none;"><br/>${offer.content}</p>`);
       $("#offerimage").attr('src',offer.image);
       $("#offerlink").attr('href',offer.link);
       returnPath = str[0].toString();
