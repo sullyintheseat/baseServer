@@ -19,6 +19,7 @@
   <body>
 
     <div class="container">
+        <a name="menu_top"></a>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1" style="text-align: left;"><br/>
           <span id="todaysdate"></span><br/>
@@ -29,7 +30,6 @@
 
 
     <div class="displayOn" id="menu">
-      
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 centered" style="text-align: center;" onclick="goto('contest')"><br/>
@@ -145,6 +145,7 @@
     </div>
 
     <div class="displayOff" id="dallas" style="margin-top:20px;">
+      <a name="dallas_top"></a>
       <div class="container">
 
         <div class="row">
@@ -166,6 +167,7 @@
     </div>
       
     <div class="displayOff" id="ftworth" style="margin-top:20px;">
+      <a name="ftworth_top"></a>
       <div class="container" >
 
         <div class="row">
@@ -188,6 +190,7 @@
     </div>
 
     <div class="displayOff" id="arlington" style="margin-top:20px;">
+      <a name="arlington_top"></a>
       <div class="container">
         
         <div class="row">
@@ -311,6 +314,7 @@
 
     goto = (target) => {
       showPanel(target);
+      window.location.hash = `#${target}_top`;
     }
 
     submitForm = () => {
@@ -346,6 +350,7 @@
 
     leaveOffer = () => {
       showPanel(returnPath);
+      window.location.hash = `#${returnPath}_top`;
     }
   </script>
 
