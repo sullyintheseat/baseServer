@@ -58,7 +58,7 @@ p {color:#000;}
             <p style="text-align: left;">Your student deal card will update automatically to give you new offers, and we'll even tell you when you are near a place where you can use it. YOU LITERALLY HAVE TO DO NOTHING! Surely you can handle that, right?</p>
             <p style="text-align: left;">Deals might be updated every week or a few times a month depending on how lazy we are. Keep your mobile wallet notifications turned on and keep an eye out for the latest free stuff from Digital Seat!</p>
             
-            <a href="https://mp.vibescm.com/c/oecpah"><button class="btn btn-lg btn-orange">GET FREE STUFF</button></a>
+            <a href="https://mp.vibescm.com/c/oecpah"><button class="btn btn-lg btn-orange" onclick="addMe()">GET FREE STUFF</button></a>
             
           </div>
        </div>
@@ -68,9 +68,20 @@ p {color:#000;}
 
   </body>
   <script type="text/javascript">
-
+    $(document).ready(function(e) { init(); });
+    
     init = () => {
+      let data = { uiEvent: 'VIEWED' };
+      postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => {
+        console.log(mdata)
+      });
+    }
 
+    addMe = () => {
+      let data ={ uiEvent: 'ADDED' };
+      postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => {
+        console.log(mdata)
+      });
     }
 
   </script>
