@@ -70,18 +70,25 @@ p {color:#000;}
   <script type="text/javascript">
     $(document).ready(function(e) { init(); });
     
+    let visited;
+
     init = () => {
-      let data = { uiEvent: 'VIEWED' };
-      postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => {
-        console.log(mdata)
-      });
+      
+      visited = localStorage.getItem('myid');
+    
+      if(!Boolean(visited)){ 
+        let data = { uiEvent: 'VIEWED' };
+        postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => {
+          localStorage.setItem('myid', mdata._id);
+          visited = mdata._id;
+        });
+      }
+      
     }
 
     addMe = () => {
-      let data ={ uiEvent: 'ADDED' };
-      postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => {
-        console.log(mdata)
-      });
+      let data ={ uiEvent: 'ADDED', sender: visited };
+      postData(data, 'https://rsapi.digitalseat.io/beta/metrics', (success, mdata) => { });
     }
 
   </script>
