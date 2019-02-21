@@ -1,0 +1,101 @@
+
+<html>
+  <head>
+    <title>Digital Seat</title>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://signup.digitalseat.io/cdn/js/libs//handlebars-v1.3.0.js"></script>
+    <script src="https://signup.digitalseat.io/cdn/js/webcalls.js"></script>
+    <script src="https://signup.digitalseat.io/cdn/js/libs/moment.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <style>
+      html, body { 
+  font-family: 'Roboto', sans-serif;
+  width:100%; 
+  padding:0px; 
+  margin:0px; 
+  background-color: #fff; 
+  font-weight: bold; 
+  font-size:18px 100%;
+  color:#000;}
+h2 { font-weight:300;}
+h1 { font-weight:300;}
+h3 {font-weight:300; margin:2px 0px 4px 0px; padding:0px; color:#ff8100;}
+h4 {font-weight:300; margin:2px 0px 4px 0px; padding:0px; color:#ff8100;}
+p {color:#000;}
+.btn-orange { background-color:  rgb(230, 105, 56); 
+  border-color: #9a9a9a; 
+  color:#fff; 
+  display: inline-block;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-custom { 
+  border-color: #9a9a9a; 
+  color:#9a9a9a; 
+  display: inline-block;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+
+    <div><a name="menu_top"></a></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12" style="text-align: center;"><br/>
+          <h3>ECU CASH PASS - PENETRATION</h3>
+        </div>
+      </div>
+
+      <div class="row" id="result-out">
+        
+      </div>
+    </div>
+
+
+    <script type="text/x-handlebars" id="template-results">
+      {{#data}}
+      <div>Type: {{uiEvent}} Time: {{createdAt}} Sender: {{sender}}</div>
+      {{/data}}
+    </script>
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(e) { init(); });
+
+    init = () => {
+      getData('https://rsapi.digitalseat.io/beta/metrics', (success, data) => {
+        SetContent("template-results", {data: data }, "result-out");
+      });
+    }
+
+    SetContent = (source, data, target) => {
+        //console.log(data);
+        var source = $("#" + source).html();
+        var template = Handlebars.compile(source);
+        $("#" + target).html(template(data));
+    };
+
+  </script>
+
+</html>
